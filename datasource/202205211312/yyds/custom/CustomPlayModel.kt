@@ -13,16 +13,16 @@ class CustomPlayModel : IPlayModel {
     ): Triple<ArrayList<Any>, ArrayList<AnimeEpisodeDataBean>, PlayBean> {
         val myJsonParser: MyJsonParser<BaseBean> =
             MyJsonParser(typeElementName = "type", targetClass = BaseBean::class.java)
-                .addTypeElementValueWithClassType("AnimeCover1", AnimeCover1Bean::class.java)
-                .addTypeElementValueWithClassType("Header1", Header1Bean::class.java)
-                .addTypeElementValueWithClassType(
+                .addClassType("AnimeCover1", AnimeCover1Bean::class.java)
+                .addClassType("Header1", Header1Bean::class.java)
+                .addClassType(
                     "HorizontalRecyclerView1",
                     HorizontalRecyclerView1Bean::class.java
                 )
-                .addTypeElementValueWithClassType("AnimeEpisode1", AnimeEpisode1Bean::class.java)
-                .addTypeElementValueWithClassType("AnimeTitleBean", AnimeTitleBean::class.java)
-                .addTypeElementValueWithClassType("PlayBean", PlayBean::class.java)
-                .addTypeElementValueWithClassType(
+                .addClassType("AnimeEpisode1", AnimeEpisode1Bean::class.java)
+                .addClassType("AnimeTitleBean", AnimeTitleBean::class.java)
+                .addClassType("PlayBean", PlayBean::class.java)
+                .addClassType(
                     "AnimeEpisodeDataBean",
                     AnimeEpisodeDataBean::class.java
                 )
@@ -33,7 +33,7 @@ class CustomPlayModel : IPlayModel {
             .create(DataSourceService::class.java)
             .getPlayData(CustomConst.MAIN_URL + partUrl)
 
-        val first = myJsonParser.fromJson<ArrayList<Any>>(
+        val first = myJsonParser.fromJson<ArrayList<Any?>>(
             raw.data!!.first.toString(),
             object : TypeToken<ArrayList<BaseBean>>() {}.type
         )
@@ -56,7 +56,7 @@ class CustomPlayModel : IPlayModel {
         animeEpisodeDataBean.title = third.episode.title
         animeEpisodeDataBean.videoUrl = third.episode.videoUrl
 
-        return Triple(first, second, third)
+        return Triple(ArrayList(first.filterNotNull()), second, third)
     }
 
     override suspend fun playAnotherEpisode(partUrl: String): AnimeEpisodeDataBean {

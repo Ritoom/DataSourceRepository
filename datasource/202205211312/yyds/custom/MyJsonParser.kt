@@ -12,7 +12,7 @@ class MyJsonParser<T>(
     private val typeAdapter: TargetDeserializer = TargetDeserializer()
     private lateinit var gson: Gson
 
-    fun addTypeElementValueWithClassType(
+    fun addClassType(
         typeElementValue: String,
         classValue: Class<out T>
     ): MyJsonParser<T> {

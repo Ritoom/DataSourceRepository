@@ -15,7 +15,7 @@ class CustomSearchModel : ISearchModel {
     ): Pair<ArrayList<Any>, PageNumberBean?> {
         val myJsonParser: MyJsonParser<BaseBean> =
             MyJsonParser(typeElementName ="type", targetClass = BaseBean::class.java)
-                .addTypeElementValueWithClassType("AnimeCover3", AnimeCover3Bean::class.java)
+                .addClassType("AnimeCover3", AnimeCover3Bean::class.java)
                 .create()
 
         val raw = RetrofitManager
@@ -23,7 +23,7 @@ class CustomSearchModel : ISearchModel {
             .create(DataSourceService::class.java)
             .getSearchData(keyWord)
 
-        val first = myJsonParser.fromJson<ArrayList<Any>>(
+        val first = myJsonParser.fromJson<ArrayList<Any?>>(
             raw.data?.first.toString(),
             object : TypeToken<ArrayList<BaseBean>>() {}.type
         )
@@ -33,6 +33,6 @@ class CustomSearchModel : ISearchModel {
             object : TypeToken<PageNumberBean?>() {}.type
         )
 
-        return first to second
+        return ArrayList(first.filterNotNull()) to second
     }
 }

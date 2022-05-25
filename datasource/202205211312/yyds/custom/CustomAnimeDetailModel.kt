@@ -11,15 +11,15 @@ class CustomAnimeDetailModel : IAnimeDetailModel {
     ): Triple<ImageBean, String, ArrayList<Any>> {
         val myJsonParser: MyJsonParser<BaseBean> =
             MyJsonParser(typeElementName = "type", targetClass = BaseBean::class.java)
-                .addTypeElementValueWithClassType("AnimeCover1", AnimeCover1Bean::class.java)
-                .addTypeElementValueWithClassType("AnimeDescribe1", AnimeDescribe1Bean::class.java)
-                .addTypeElementValueWithClassType("AnimeInfo1", AnimeInfo1Bean::class.java)
-                .addTypeElementValueWithClassType("Header1", Header1Bean::class.java)
-                .addTypeElementValueWithClassType(
+                .addClassType("AnimeCover1", AnimeCover1Bean::class.java)
+                .addClassType("AnimeDescribe1", AnimeDescribe1Bean::class.java)
+                .addClassType("AnimeInfo1", AnimeInfo1Bean::class.java)
+                .addClassType("Header1", Header1Bean::class.java)
+                .addClassType(
                     "HorizontalRecyclerView1",
                     HorizontalRecyclerView1Bean::class.java
                 )
-                .addTypeElementValueWithClassType("ImageBean", ImageBean::class.java)
+                .addClassType("ImageBean", ImageBean::class.java)
                 .create()
 
         val raw = RetrofitManager
@@ -31,11 +31,11 @@ class CustomAnimeDetailModel : IAnimeDetailModel {
 
         val second: String = raw.data.second
 
-        val third = myJsonParser.fromJson<ArrayList<Any>>(
+        val third = myJsonParser.fromJson<ArrayList<Any?>>(
             raw.data.third.toString(),
             object : TypeToken<ArrayList<BaseBean>>() {}.type
         )
 
-        return Triple(first, second, third)
+        return Triple(first, second, ArrayList(third.filterNotNull()))
     }
 }
