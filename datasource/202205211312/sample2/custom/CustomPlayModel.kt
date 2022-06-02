@@ -2,6 +2,7 @@ package com.skyd.imomoe.model.impls.custom
 
 import android.app.Activity
 import android.view.View
+import androidx.compose.runtime.NoLiveLiterals
 import com.skyd.imomoe.bean.*
 import com.skyd.imomoe.model.util.JsoupUtil
 import com.skyd.imomoe.model.interfaces.IPlayModel
@@ -15,6 +16,7 @@ import java.net.URLDecoder
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
+@NoLiveLiterals
 class CustomPlayModel : IPlayModel {
     private var mActivity: SoftReference<Activity>? = null
 
@@ -149,6 +151,7 @@ class CustomPlayModel : IPlayModel {
                                         .text().replace("：", "")
                                     if (episode.title.startsWith(": ")) {
                                         episode.title = episode.title.replaceFirst(": ", "")
+                                            .replaceFirst(" BDRIP", "")
                                     }
                                     animeEpisodeDataBean.title = episode.title
                                 }
@@ -235,6 +238,7 @@ class CustomPlayModel : IPlayModel {
                                     val titChildren = children[i].children()
                                     animeEpisodeDataBean.title =
                                         titChildren.select("span").text().replace("：", "")
+                                            .replaceFirst(" BDRIP", "")
                                     if (animeEpisodeDataBean.videoUrl.isNotBlank())
                                         cancellableContinuation.resume(animeEpisodeDataBean)
                                 }

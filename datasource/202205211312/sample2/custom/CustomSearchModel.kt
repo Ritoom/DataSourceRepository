@@ -1,11 +1,13 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.skyd.imomoe.bean.PageNumberBean
 import com.skyd.imomoe.model.util.JsoupUtil
 import com.skyd.imomoe.model.interfaces.ISearchModel
 import com.skyd.imomoe.util.Util
 import org.jsoup.select.Elements
 
+@NoLiveLiterals
 class CustomSearchModel : ISearchModel {
     override suspend fun getSearchData(
         keyWord: String,

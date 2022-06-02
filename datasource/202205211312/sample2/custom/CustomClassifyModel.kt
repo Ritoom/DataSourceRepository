@@ -2,6 +2,7 @@ package com.skyd.imomoe.model.impls.custom
 
 import android.app.Activity
 import android.view.View
+import androidx.compose.runtime.NoLiveLiterals
 import com.skyd.imomoe.bean.ClassifyBean
 import com.skyd.imomoe.bean.PageNumberBean
 import com.skyd.imomoe.config.Const
@@ -18,6 +19,7 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.random.Random
 
+@NoLiveLiterals
 class CustomClassifyModel : IClassifyModel {
     private var mActivity: SoftReference<Activity>? = null
 

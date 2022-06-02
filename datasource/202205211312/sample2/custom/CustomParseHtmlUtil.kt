@@ -1,5 +1,6 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.skyd.imomoe.bean.*
 import com.skyd.imomoe.route.Router.buildRouteUri
 import com.skyd.imomoe.route.processor.ClassifyActivityProcessor
@@ -7,6 +8,7 @@ import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
 import java.net.URL
 
+@NoLiveLiterals
 object CustomParseHtmlUtil {
 
     fun parseHeroWrap(element: Element, imageReferer: String): List<AnimeCover6Bean> {//banner

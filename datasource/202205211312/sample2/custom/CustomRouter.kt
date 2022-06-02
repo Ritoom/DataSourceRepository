@@ -2,6 +2,7 @@ package com.skyd.imomoe.model.impls.custom
 
 import android.content.Context
 import android.net.Uri
+import androidx.compose.runtime.NoLiveLiterals
 import com.skyd.imomoe.model.interfaces.IRouter
 import com.skyd.imomoe.route.Router.buildRouteUri
 import com.skyd.imomoe.route.Router.route
@@ -15,6 +16,7 @@ import java.net.MalformedURLException
 import java.net.URL
 
 
+@NoLiveLiterals
 class CustomRouter : IRouter {
     override fun route(uri: Uri, context: Context?): Boolean {
         val uriString = uri.toString()

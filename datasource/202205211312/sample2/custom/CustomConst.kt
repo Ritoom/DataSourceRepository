@@ -1,8 +1,10 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.skyd.imomoe.BuildConfig
 import com.skyd.imomoe.model.interfaces.IConst
 
+@NoLiveLiterals
 class CustomConst : IConst {
     companion object {
         val ANIME_RANK: String = "/ranklist/"
@@ -16,9 +18,9 @@ class CustomConst : IConst {
     override val MAIN_URL: String
         get() = BuildConfig.CUSTOM_DATA_MAIN_URL
 
-    override fun versionName(): String = "1.2.2"
+    override fun versionName(): String = "1.2.3"
 
-    override fun versionCode(): Int = 8
+    override fun versionCode(): Int = 7
 
     override fun about(): String {
         return "数据来源：${MAIN_URL}"

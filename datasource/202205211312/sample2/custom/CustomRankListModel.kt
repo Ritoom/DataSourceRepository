@@ -1,10 +1,12 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.skyd.imomoe.bean.PageNumberBean
 import com.skyd.imomoe.model.util.JsoupUtil
 import com.skyd.imomoe.model.interfaces.IRankListModel
 import org.jsoup.select.Elements
 
+@NoLiveLiterals
 class CustomRankListModel : IRankListModel {
     private var bgTimes = 0
     var rankList: MutableList<Any> = ArrayList()

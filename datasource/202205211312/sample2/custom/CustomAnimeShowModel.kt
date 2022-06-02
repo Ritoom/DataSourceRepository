@@ -1,5 +1,6 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.skyd.imomoe.bean.Banner1Bean
 import com.skyd.imomoe.bean.Header1Bean
 import com.skyd.imomoe.bean.PageNumberBean
@@ -7,6 +8,7 @@ import com.skyd.imomoe.model.util.JsoupUtil
 import com.skyd.imomoe.model.interfaces.IAnimeShowModel
 import org.jsoup.select.Elements
 
+@NoLiveLiterals
 class CustomAnimeShowModel : IAnimeShowModel {
     override suspend fun getAnimeShowData(
         partUrl: String
