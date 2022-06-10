@@ -1,10 +1,12 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.google.gson.reflect.TypeToken
 import com.skyd.imomoe.bean.*
 import com.skyd.imomoe.model.interfaces.IAnimeDetailModel
 import com.skyd.imomoe.net.RetrofitManager
 
+@NoLiveLiterals
 class CustomAnimeDetailModel : IAnimeDetailModel {
     override suspend fun getAnimeDetailData(
         partUrl: String

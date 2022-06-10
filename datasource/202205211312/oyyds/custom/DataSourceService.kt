@@ -1,5 +1,6 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.google.gson.JsonElement
 import com.skyd.imomoe.bean.AnimeCover10Bean
 import com.skyd.imomoe.bean.ImageBean
@@ -11,6 +12,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 import retrofit2.http.Url
 
+@NoLiveLiterals
 internal interface DataSourceService {
     @GET("${CustomConst.MAIN_URL}/getAllTabData")
     suspend fun getAllTabData(): DataWrapper<ArrayList<TabBean>>

@@ -1,9 +1,11 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.skyd.imomoe.bean.TabBean
 import com.skyd.imomoe.model.interfaces.IHomeModel
 import com.skyd.imomoe.net.RetrofitManager
 
+@NoLiveLiterals
 class CustomHomeModel : IHomeModel {
     override suspend fun getAllTabData(): ArrayList<TabBean> {
         val raw = RetrofitManager

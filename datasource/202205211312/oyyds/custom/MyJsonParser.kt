@@ -1,9 +1,11 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.google.gson.*
 import java.lang.reflect.Type
 import java.util.HashMap
 
+@NoLiveLiterals
 class MyJsonParser<T>(
     private var typeElementName: String,
     private var targetClass: Class<T>

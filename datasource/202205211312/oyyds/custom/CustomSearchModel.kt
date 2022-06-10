@@ -1,5 +1,6 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.google.gson.reflect.TypeToken
 import com.skyd.imomoe.bean.AnimeCover3Bean
 import com.skyd.imomoe.bean.BaseBean
@@ -8,6 +9,7 @@ import com.skyd.imomoe.model.interfaces.ISearchModel
 import com.skyd.imomoe.net.RetrofitManager
 
 
+@NoLiveLiterals
 class CustomSearchModel : ISearchModel {
     override suspend fun getSearchData(
         keyWord: String,

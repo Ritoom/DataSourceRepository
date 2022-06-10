@@ -1,11 +1,13 @@
 package com.skyd.imomoe.model.impls.custom
 
 import android.app.Activity
+import androidx.compose.runtime.NoLiveLiterals
 import com.google.gson.reflect.TypeToken
 import com.skyd.imomoe.bean.*
 import com.skyd.imomoe.model.interfaces.IPlayModel
 import com.skyd.imomoe.net.RetrofitManager
 
+@NoLiveLiterals
 class CustomPlayModel : IPlayModel {
     override suspend fun getPlayData(
         partUrl: String,

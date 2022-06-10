@@ -1,5 +1,6 @@
 package com.skyd.imomoe.model.impls.custom
 
+import androidx.compose.runtime.NoLiveLiterals
 import com.google.gson.reflect.TypeToken
 import com.skyd.imomoe.bean.*
 import com.skyd.imomoe.model.util.JsoupUtil
@@ -7,6 +8,7 @@ import com.skyd.imomoe.model.interfaces.IEverydayAnimeModel
 import com.skyd.imomoe.net.RetrofitManager
 import org.jsoup.select.Elements
 
+@NoLiveLiterals
 class CustomEverydayAnimeModel : IEverydayAnimeModel {
 
     override suspend fun getEverydayAnimeData(): Triple<ArrayList<TabBean>, ArrayList<List<Any>>, String> {
