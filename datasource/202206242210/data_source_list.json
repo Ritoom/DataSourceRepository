@@ -1,6 +1,17 @@
 {
   "dataSourceList": [
     {
+      "name": "CustomDataSource1",
+      "interfaceVersion": "202206242210",
+      "versionName": "1.2.3",
+      "versionCode": 10,
+      "author": "默认",
+      "icon": "/datasource/202206242210/sample1/icon.webp",
+      "describe": "动漫",
+      "publicAt": 1656144848491,
+      "downloadUrl": "/datasource/202206242210/sample1/CustomDataSource1.ads"
+    },
+	{
       "name": "CustomDataSource2",
       "interfaceVersion": "202206242210",
       "versionName": "1.2.4",
@@ -8,7 +19,7 @@
       "author": "默认",
       "icon": "/datasource/202206242210/sample2/icon.webp",
       "describe": "动漫",
-      "publicAt": 1653114251000,
+      "publicAt": 1656144848491,
       "downloadUrl": "/datasource/202206242210/sample2/CustomDataSource2.ads"
     }
   ]
