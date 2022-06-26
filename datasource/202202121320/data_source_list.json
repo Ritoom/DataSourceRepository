@@ -32,6 +32,17 @@
       "describe": "很牛视频网站源（18+）",
       "publicAt": 1652887739000,
       "downloadUrl": "/datasource/202202121320/mr-mihu/henniu-sese.ads"
+    },
+    {
+      "name": "hanime",
+      "interfaceVersion": "202202121320",
+      "versionName": "0.0.1",
+      "versionCode": 1,
+      "author": "Ritoom",
+      "icon": "",
+      "describe": "HAnime（18+）仅供学习交流，严禁用于商业用途，请于24小时内删除",
+      "publicAt": 1656215307390,
+      "downloadUrl": "/datasource/202202121320/hanime/HAnime.ads"
     }
   ]
 }
